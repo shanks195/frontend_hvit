@@ -1,0 +1,37 @@
+1.Giới thiệu tổng quan về vue js:
+-Gọi tắt là vue(phát âm là (/vju:/),giống như view trong tiếng anh)
+-Vue.js là một progressive framework dùng để xây dựng giao diện người dùng(user
+interfaces).
+-Khác với các monolithic framework,Vue được thiết kế từ đầu theo hướng
+cho phép và khuyến khích việc phát triển ứng dụng theo từng bước.
+-Khi phát triến lớp giao diên(view layer),người dùng chỉ cần thư viện lõi(core
+library) của Vue,vốn rất dể học và tích hợp với các thư viện và các dự án
+có sẵn.
+-Hơn nữa,Vue lại chứa đựng một sức mạnh rất lớn trong việc xây dựng Single-Page
+Applications khi được kết hợp với công cụ build và các thư viện/component được xây dựng
+bởi cộng đồng.
+-Và Vue.js cũng hỗ trợ hầu hết các trình duyệt hiện nay.
+Các kiến thức cần có:
+Cần có kiến thức của javascript.Và 1 điều nữa vì vue.js xử lý phần frontend nên tiếp đó các bạn
+cần phải có kiến thức của HTML,CSS.
+2.Cài đặt và chạy thử app Vue
+Cài đặt:
+-có nhiều cách để cài đặt VueJs:tải bộ thư viện vue,nhúng core bằng link(CDN),Install
+vue bằng lệnh (NPM),sử dung vue UI,....
+-Cách chúng ta cùng thực hiện sau đây là cài đặt vue CLI
+-CLI là viết tắt của (command Line interface) và Vue CLI cung cấp một hệ thống đầy đủ dể phát triển
+Vue.js nhanh chóng.Điều này có nghĩa nó làm rất nhiều công việc tẻ nhạt
+cho chúng ta và cung cấp cho chúng ta các tính năng có giá trị vượt trội:
++Nó cho phép chúng ta chọn thư viện nào mà dự án của chúng tôi sẽ sử dụng.Sau đó,nó sẽ tự dộng cắm chúng vào dự án.
++Tất cả các tệp Javascript,CSS và các phụ thuôc được đóng gói đúng cách,
+được thu nhỏ và tối ưu hóa.
++Nó cho phép chúng ta viết HTML,CSS và Javascript theo cách chúng ta thích.
+Chúng ta có thể sử dụng các tệp component .vue,TypeScript,SCSS,....
++Nó cho phép thay thế module ngay lập tức.Vì vậy,khi bạn lưu dự án của mình,các thay đổi sẽ xuất hiện ngay lập  tức trong trinh duyệt
+-Cùng thực hành cài đặt project vue dầu tien nhé!
+==>npm i -g @vue/cli
+vue create <project_name>
+(thuc hien cac lua chon config)
+cd <project_name>
+npm run serve
+bu

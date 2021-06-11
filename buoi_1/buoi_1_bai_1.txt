@@ -1,0 +1,115 @@
+Các thẻ giao dien cơ bản
+Thẻ		Mô Tả
+<!DOCTYPE>	Xác định cho trình duyêt biết phiên bản HTML mà ban dang
+		sử dụng
+<html>		Xác định 1 tài liệu HTML
+<head>		Xác định phần đầu của tài liệu HTML
+		(chứa các thẻ cung cấp thông tin cho trang
+		web)
+<title>		Xác dịnh tiêu đề của trang web
+<body>		Xác định phần thân của tài liệu HTML
+		(Chứa những phần tử sẽ được hiển thị lên màn hình trình duyệt_
+<h1>-<h6>	Tạo những đề mục quan trọng trong trang web
+<p>		Xác định 1 đoạn văn bản
+<br>		Chèn 1 ngắt xuống dòng
+<hr>		Tạo 1 dường kẻ phân cách nằm ngang
+<!- ->		Xác định 1 doạn chú thích
+
+Các thẻ định dạng:
+Thẻ		Mô tả
+<b>		Xác định đoạn văn bản được in đậm
+<u>		Xác định đoạn văn bản được gạch chân
+<i>		Xác định 1 đoạn văn bản được định dạng kiểu chữ in nghiêng
+<big>		Xác định 1 đoạn văn bản có kích thước chữ to hơn van bản bình thường
+<small>		Xác định 1 đoạn văn bản có kích thước chữ nhỏ hơn văn bản bình thường
+<blockquote>	Xác định 1 doan trích dẫn từ 1 website khác
+<code>		Xác định 1 doạn văn bản mang ý nghĩa là các mã lênh
+<mark>		Đánh dấu màu nền nỗi bật cho văn bản
+<sub>		Tạo văn bản có kích thước nhỏ, nằm ở khoảng nữa dưới văn bản bình thường
+<sup>		Tạo văn bản có kích thước nhỏ, nằm ở khoảng nữa trên văn bản bình thường
+
+Các thẻ img/video
+<img>		Chèn hình ảnh vào trang web
+<video>		Tạo 1 "trình xem phim" cho trang web
+<track>		Chèn 1 bản phụ dề vào video
+
+Các thẻ links /list:
+<a>		Tạo 1 liên kết đến 1 tài liệu nào đó
+		(khi người dùng bấm vào liên két thì sẽ được chuyển đến tài liệu đó)
+<ul>		Xác định 1 danh sách không có thứ tự
+<ol>		Xác định 1 danh sách có thứ tự
+<li>		Xác định 1 "danh mục" trong danh sách
+
+
+Các thẻ table
+<table>		Xác định phần tử là 1 cái bảng
+<caption>	Tạo tiêu dề cho bảng
+<th>		Xác định phần tử là 1 tiêu đề trong bảng
+<tr>		Xác định phần tử là 1 hàng trong bảng
+<td>		Xác định phần tử là 1 ô trong hàng
+<thead>		Xác định những dòng nào thuộc "phần đầu" của bảng
+<tbody>		Xác định những dòng nào thuộc "phần thân" của bảng
+<tfoot>		Xác định những dòng nào thuộc "phần chân" của bảng
+
+Các thè bo cuc
+<div>		Nhóm các phần tử lại với nhau để tiện cho việc định dạng cũng như thiết 
+		kế bố cục của trang web
+<span>		Nhóm các phần tử nội tuyến với nhau dể tiện cho việc dinh
+		dạng CSS
+<header>	Xác định phần dầu của trang web
+<footer>	Xác định phần chân của trang web
+<main>		Xác định phần thân của trang web
+<dialog>	Tạo 1 hôp thoại
+<style>		Dùng để làm thùng chứa cho các doan mã css
+<script>	Dùng để làm thùng chứa cho các cau lenh js
+<noscript>	Xác dinh 1 noi dung Html sẽ được hiển thi khi trình duyệt k hổ trợ Javascript
+		hoặc đã tắt javascript
+
+
+Các thẻ dữ liệu:
+Các thẻ nhập liệu trong form
+1.Các the input
+<input type="type-input" name="name-input" value="value-input">
+-Thành phần quan trọng nhất trong nhất trong input là loại (type) và tên trường (name) để nhận dang dữ
+liệu khi truyền đến server
+-Input có nhiều loai khác nhau nhu:
+text,password,submit,reset,radio,checkbox,button,color,date,datetime-local,
+email,month,number,range,search,tel,time,url,week
+2.Cac the textarea
+Dể nhập nội dung dài và chứa nhiều ký tự thì thẻ textarea là lựa chọn.Thẻ được
+sử dụng phổ biến trong hầu hết các website và đặt tính của
+nó là có thể mở rộng khung nhập liệu.Cấu trúc thẻ như sau:
+	<textarea name="name-textarea" 
+		  rows="number-rows"
+		  cols="number-columns"></textarea>
+Rows là so dong hien thi
+cols la so cot hien thi
+4.The button:
+Đây là thẻ hiển thị nút bấm,no khong khác gì so với input
+kiểu button nên bạn có thể sử dụng de thay thế 
+cho nhau:
+<button type="button" name="button-name" 
+	onclick="action-when-click-button"></button>
+
+Các thuộc tính của thẻ:
+Một thuộc tính dược sử dụng để xác định đặc trưng của  1 phần tử HTML và được
+đặt trong 1 thẻ mở của phần tử đó.Tất cả các thuộc tính được chia thành 2 phần
+Ten_thuoc_tinh ='Gia_tri'
+Ten_thuoc_tinh lả tên của thuộc tính mà bạn cần gán cho the,các thuộc tính có 
+thẻ chung hoặc đăc thù riêng của từng thẻ
+Ví dụ:Thẻ<a> cần link tới 1 trang web, ban có thể sử dụng thuộc tính
+href để gắn link mà cần điều hướng đến
+1.thuoc tinh id
+2.thuoc tinh class
+3.thuoc tinh style
+4.thuoc tinh ngon ngu
+<html lang="vi-VI"> thuoc tinh khai bao ngon ngữ cua the html
+5.Thuoc tinh tieu de:
+<p title="Đay la noi dung"> thuoc tính có thể dùng cho nhiều the nhu p,a,img
+6.Thuoc tinh href
+7.Thuoc tinh kich thuoc
+8.Thuoc tinh alt
+
+
+
+

@@ -1,0 +1,52 @@
+1.Gioi thieu chung:
+			Document
+			  |
+			  |
+			  |
+			Root Element:
+			<html>
+			  |
+	------------------------------------
+        |				   |
+	Element:			Element
+	<head>				<body>
+	|
+	---------
+	Element:|	Atrribute: => Element:
+	<title>	|	"href"	  	<a>
+
+
+
+1.Giới thiệu chung:
+Vue- DOM interaction
+-Vue.js sử dụng 1 cú pháp template dựa trên HTML,cho phép bạn rèn buộc (bind)
+1 cách minh bạch cấu trúc DOM được render với dữ liệu của đối tượng vue ben dưới'
+-Tất cả các template của Vue đều là code HTML hợp lệ và có thể được parse
+bởi các trình duyệt và parser chuẩn
+-Bên dưới,Vue biên dịch template thành các hàm render Virtual DOM(DOM ảo).Kết hợp với hệ thống 
+reactivity(phản ứng),Vue có thể xác định một cách thông minh số lượng tối thiểu các component có phải 
+render lại, và áp dụng số lượng tối thiểu các hiệu chỉnh về DOM khi trạng thái ứng dụng thay đổi
+2/template Syntax
+2.1.Interpolations:
+-interpolation là 1 thuat ngữ trong vue.js.Đây là 1 quá trình thêm 1 văn bản,nội dung
+,atrribute,... vào các thẻ HTML 
+*Text
+-Để bind 1 đoạn văn bản vào trong thẻ HTML thì ta sử dụng cấu trúc:
+<tag_name>{{ variable }}</tag_name>
+-Trong đó,variable là tên biến được khai báo trong data.Cần lưu ý rằng,dữ liệu
+này khi hiển thị trên HTML sẽ là dữ liệu dạng thô.
+-Và trong dấu {{}} thì có thể sử dụng các hàm javascript
+* Attributes
+-cú pháp {{}} không dùng được bên trong các thuộc tính HTML.Thay vào đó,bạn hãy dùng directive v-bind
+để có thể thêm các attribute vaò tag HTML bằng dữ liệu trong vue.js
+
+	<tag_name v-bind:attributeName="data"></tag_name>
+-Trong đó, attributeName là tên các attribute mà bạn muốn thực hiên binding,data là dữ liệu đã thiết lập trong
+vue js
+*Directives:
+Directives trong vue.js là các attribute được thiết lập bằng các tiền tố v-.Gía tri của các attribute này thường
+ là các biểu thức javascript duy nhất,chỉ trừ v-for
+Trong một số các directives nó sẽ cho phép các bạn truyền tham số vào các
+directive này thì bạn chỉ cần ngăn giữa directive và tham số bằng  dấu ':'
+-vi du,directives v-bind được dùng để cập nhật động 1 thuoc tính HTML:
+<a v-bind:hred="url"></a>

@@ -8,6 +8,17 @@
     <button v-bind:disabled="disable">hello</button><br>
     <a v-bind:href="link">click vao day vao cong dong nay </a> <br>
     <button v-on:click="showAlert()">Hello Ai???</button>
+    <button v-on:click="demcuu">Dem cuu</button>
+<p>{{counter}} con cuu</p>
+<button v-on:click="demcuux2">Dem cuu</button>
+<button v-on:click="demcuu1(5)">Dem cuu</button>
+<p>{{counter}} x2 con cuu</p>
+<select v-on:change="chonkhoahoc" v-model="khoahoc">
+	<option value="Fullstack java">Fullstack java</option>
+	<option value="Fullstack php">Fullstack php</option>
+	<option value="Fullstack javascript">Fullstack javascript</option>
+	<option value="Fullstack C#">Fullstack C#</option>
+<select>
   </div>
 </template>
 
@@ -25,7 +36,8 @@ export default  {
      islsdsd:"Para",
     message: "Hello The Toan",
     counter: 0,
-    samHello: '<p style="color:red">Hello teacher</p>'
+    samHello: '<p style="color:red">Hello teacher</p>',
+    khoahoc:'',
    }
 
  },
@@ -35,7 +47,20 @@ export default  {
    },
    showAlert() {
      alert("hello teacher");
-   }
+   },
+   demcuu() {
+		this.counter++
+		},
+		demcuu1(SoNhan){
+			this.counter=this.counter*SoNhan;
+		},
+		demcuux2() {
+		this.counter=counter+2
+		},
+		chonkhoahoc() {
+			var msg ='Ban vua chon khoa hoc' +this.khoahoc;
+			alert(msg);
+		}
  }
 }
 </script>

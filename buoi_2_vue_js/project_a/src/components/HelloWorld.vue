@@ -19,6 +19,13 @@
 	<option value="Fullstack javascript">Fullstack javascript</option>
 	<option value="Fullstack C#">Fullstack C#</option>
 <select>
+<button v-on:click="counter1++">Tang cuu</button>
+<br>
+<br>
+<button v-on:click="counter1++">Giam  cuu</button>
+bộ dếm: {{counter1}}
+{{ res }} | {{ deomcuu()}} số cưu
+
   </div>
 </template>
 
@@ -36,12 +43,22 @@ export default  {
      islsdsd:"Para",
     message: "Hello The Toan",
     counter: 0,
+    counter1:0,
     samHello: '<p style="color:red">Hello teacher</p>',
     khoahoc:'',
    }
 
  },
+ computed:{
+   res() {
+     this.counter1 >5? 'co nhieu hon 5' : 'co it hon 5';
+   }
+ },
  methods: {
+    deomcuu() {
+     this.counter1 >5? 'co nhieu hon 5' : 'co it hon 5';
+
+   },
    deomSo() {
      this.counter = this.counter + 1;
    },

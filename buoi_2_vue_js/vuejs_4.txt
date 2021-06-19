@@ -1,0 +1,36 @@
+﻿Computed Property
+1.Computed property:
+-Computed property hay còn gọi là các thuộc tính được tính toán truoc hoặc tính toán có "bộ đệm".
+-Giong như tên gọi, nó được tính toán và lưu vào bộ đệm và chỉ thực hiện lại việc này khi các biến phụ thuộc thay đổi
+-Trong thực tế,khi vue instance được khởi tạo,các thuộc tính dạng computed sẽ được chuyển dạng thành 1 thuộc tính của vue giống như các biến,đối tượng trong thuộc tính data
+-Do vậy,bạn không thê gọi 1 computed property giống phương thức và computed property cũng không chấp nhận tham số.
+-Cách khai báo computed property cũng giống với khai báo các phương thức,chỉ khác là thay vì khai báo trong thuộc tính methods thì giờ khai báo trong thuộc tính methods
+
+*Su khác nhau giữa computed và methods:
+-Khi gọi computed ta k được thêm cặp dấu () dằng sau,diều đó tức là computed cũng không thể nhận tham số đầu vào
+như methods
+-Vì không nhận tham số đầu vào nên computed chỉ nên dùng các dữ liệu có sẵn trong data của component
+-Computed sẽ tính toán lại mỗi khi cac biến phụ thuộc trong nó thay đôi,còn methods sẽ được tính toán lại bất kỳ khi nàonó được gọi,nên
+nếu biết tận dụng computed để tính toán các dữ liệu có sẵn thì sẽ cải thiện được
+performance app của các bạn.Điều tuyệt vời của computed là nó sẽ dược cached nên giả sử bạn có 1 computed với hàng loat tính toán, lặp trong đó,thì nếu các biến phụ thuộc
+không thay đổi khi sử dụng nó sẽ chỉ mất thời gian tính 1 lần,những lần sau kết quả sẽ duộc sử dụng lại từ lần trước.
+
+
+
+2.Tiết kiệm thởi gian hơn với shorthands
+-prefix v- đóng vai trò gợi ý trực quan để nhận ra các thuoc tính riêng của vue trong template.
+-Điều này có ích khi bạn sử dụng vue vào các dự án có sẵn,tuy nhiên đối với các directive dươc dùng
+thường xuyên thì v- có thể trông hơi rườm rà.
+-Thêm vào đó v- tro nen kém quan trọng hơn khi bạn xây dựng các SPA, trong dó vue quản lý toàn bộ các template
+-Vì thế vue cung cap dang rut gon shorthand) đặc biệt cho hai trong số các directive được dùng nhiều nah61r51
+,v-bind và v-on:
+<!--cu phap day dủ-->
+<a v-bind:href="url"></a>
+<!--Cu phap rut gon: dung dau hai chấm -->
+<a :href="url"></a>
+
+
+<!--cu phap day du-->
+<a v-on:click="doSomeThing"></a>
+!--cu phap rut gon: dung ki tu @-->
+<a @click="doSomeThing"></a>

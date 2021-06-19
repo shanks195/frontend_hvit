@@ -34,3 +34,65 @@ thường xuyên thì v- có thể trông hơi rườm rà.
 <a v-on:click="doSomeThing"></a>
 !--cu phap rut gon: dung ki tu @-->
 <a @click="doSomeThing"></a>
+3.Dynamic style:
+3.Binding class
+Doi voi object
+Ta co the truyen 1 object vao v-bind:class de bat tat class 1 cach linh hoat:
+<div v-bind:class="{active : isActive }"></div>
+-Cú phap nhu tren nghia la class active se duoc ap dung tuy theo tính dúng sai cua thuoc tinh du lieu isActive
+-Ban có thể bật tắt nhiều class bang cach dung nhieu field(truong) trong object.Thêm vào đó,directive v-bind:class và
+thuộc tính class thông thường có thể được dùng cùng lúc với nhau
+trong object.Thêm vào đó,directive v-bind:class và thuco65 tính class thuông thuòng có thể được dùng cùng lúc với nhau
+-Nếu chúng ta có template sau:
+	<div class="static" v-bind:class="{active :isActive,'text-bind':hasError}" @click="isActive=!isActive"></div>
+Du lieu truyen vao nhu the này:
+data: {
+isActive:true,
+hasError:false
+}
+===>kq:
+<div class="statice active"></div>
+
+
+Doi voi mảng:
+Chung ta có the truyen 1 mảng vao v-bind:class 
+<div v-bind:class="[activeClass,errorClass]"></div>
+data: {
+	activeClass:'active',
+	errorClass:'text-danger',
+	}
+==>kQ:
+<div class="active text-danger">M</div>
+-Neu muon bat tat theo dieu kien 1 class trong danh sách,bạn có thể dùng một toán tử ba gơ (ternany expression):
+<div v-bind:class="[isActive? activeClass:",errorClass]"></div>
+-Doan code tren se luon luon ap dung class errorClass,nhung chỉ ap dung activeClass khi isActive mang giá trị đúng
+-Cach làm này có thể hơi dài dòng nếu bạn có nhiều class theo điều kiện.Do đó,ban có thể dùng cú pháp object bên trong cú pháp
+mảng như sau:
+<div v-bind:class="[{active: isActive},errorClass]"></div>
+<p :class="[isRed ? cls_red:'',cls_block]">sdad</p>
+data() {
+	return {
+	isRed:true,
+	cls_red:'red',
+	cls_block:'block',
+	}
+}
+Binding style:
+
+Doi voi object:
+<div v-bind:style="{color:activeColor,fontSize:fontSize +'px'}"></div>
+<div v-bind:style="StyleObject"></div>
+data:{
+	activeColor:'red',
+	fontSize:30
+	}
+data : {
+	styleObject: {
+	color:'red',
+	fontSize:'13px'
+	}
+}
+doi voi mảng
+<div v-bind:style="baseStyles,overridingStyles]"></div>
+
+	

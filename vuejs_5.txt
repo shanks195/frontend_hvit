@@ -1,0 +1,133 @@
+﻿Conditional
+1.Conditional rendering
+*v-if > v-else-if > v-else:
+-Dung de tuy bien dieu kien xay ra doi voi cac phan tu html
+<tag_name v-if="conditional_1"></tag_name>
+[ <tag_name v-else-if="conditional_2"></tag_name>
+<tag_name v-else-if="conditional_3"></tag_name>
+...
+<tag_name v-else-if="conditional_n"></tag_name>
+<tag_name v-else></tag_name>
+]
+Trong dó,các conditional_x là các giá trị
+trả về true/false có thể là biến,biểu thức,hàm,...
+-Cac the chứa v-else-if hoặc v-else là không bắt buộc  trong khoi lenh tren,
+nếu có,nó cần đi ngay sau v-if
+-Khong the có v-else-if hoac v-else đứng 1 mình,nó chỉ tồn tại khi có v-if,de bo nghĩa chỉ v-if
+Lưu ý:
+Vi là 1 directive,v-if phải được dùng trên 1 phần tử đơn lẻ (single element)
+như <p> hoac <div>.Nếu chúng ta muốn bât tat 1 nhóm các phần tử thì sao?
+Chỉ cần v-if tren 1 phan tu <template> voi vai tro wrap(boc) các phần tử nhóm.
+Kết quả render cuối cùng se k có phần tử <template> này.
+<template v-if="ok">
+	<h1>Anh chàng chăn lơn</h1>
+	<p>ơ này,Augustin than mến ơi</p>
+	<p>Moi viec deu nhu y,nhu y,nhu y</p>
+</template>
+
+vidu
+<template>
+<p  v-if="seen == true">Da xm tin nhan</p>
+<p  v-else>Chua xem tin nhan</p>
+<input type="text" v-model="a">
+<p  v-if="a==1">a=1</p>
+<p  v-else-if="a==2">a=2</p>
+<p  v-else-if="a==3">a=3</p>
+<p  v-else-if="a==4">a=4</p>
+<p  v-else>a k co nhan gia tri a tu 1 -4 </p>
+</template>
+<script>
+export default {
+	name:"HelloWorld",
+	data() {
+		return {
+			seen:true,
+			a:0,
+		}
+	},
+	methods: {
+		
+	}
+}
+</script>
+</template>
+
+*v-show:
+-Mot lua chon nua cho viec hien hoac ẩn 1 phan tu web theo dieu kiện là directive v-show.
+Cach dung v-show tương tu nhu v-if:
+<tag_name v-show ="conditional"></tag_name>
+-Diem khac biet giưa v-show va v-if la phan tu duoc dánh dấu với v-show se luon luon duoc 
+render và chứa trong DOM;v-show chỉ bật tắt thuôc tính display của phan tu này
+Luu y:v-show k ho tro the <template> và cung k hoat dong voi v-else.
+<p  v-show="seen == true">Da xm tin nhan</p>
+data() {
+		return {
+			seen:true,
+			a:0,
+		}
+	},
+
+
+2/List rendering:
+*v-for doi voi danh sach:
+Chng ta có the dung directive v-for de render 1 danh sach cac item dua tren 1 mảng.Directive v-for đòi
+hoi 1 cu phap dac biet duoi dang item in items,trong đó items la mảng dữ liệu nguồn và item trỏ đến phần tử mảng đang được
+duyêt đến:
+<tag_name v-for="(item,index) in object" :key="index">
+	//cac thao tac voi du lieu
+</tag_name>
+Trong đó,key va value là cap thuoc tính trong mỗi object,index là chỉ số của các cặp thuôc tính này
+vi du:
+<template>
+	<button @click="themHoaQua()">Them hoa quả</button>
+	<button @click="xoaHoaQua()">Xoa hoa qua</button>
+	<div id="list">
+		<li v-for="(item,index) in dsHoaQua" :key="index">
+			{{index}} - {{ item.ten }} co mau {{ item.mauSac }}
+
+		</li>
+	</div>
+</template>
+<script>
+export default {
+	name:"HelloWorld",
+	data() {
+	return {
+			dsHoaQua:[
+			{ ten:'Qua Chanh',mauSac:'vang'},
+			{ ten:'Qua Cam',mauSac:'cam'},
+			{ ten:'Qua buoi',mauSac:'xanh la'},
+			{ ten:'Qua du du',mauSac:'do'},
+			]
+		}
+	},
+	methods: {
+		themHoaQua() {
+		this.dsHoaQua.push({
+			{ ten:'Qua du du',mauSac:'do'},
+		})
+		},
+		xoaHoaQua() {
+		this.dsHoaQua.pop();
+		}
+	}
+}
+</script>
+
+*v-for doi voi object:
+<tag_name v-for="(key,value,index) in items" :key="index">
+	//cac thao ac voi item
+</tag_name>
+
+*Mot so phuong thuc bien doi
+Vue wrap cac phuong thuc bien doi của 1 mảng dược quan sat de viec goi phuong thức
+này cũng se kích hoat thay doi tren view.Cac phuong thức dc wrap gom có:
+push()
+pop()
+shift()
+unshift()
+splice()
+sort()
+reverse()
+
+Ban co the mo console va thu thay doi mang item trong các vi du tren day bang cach tjic tjo cac[jipmg tjic bien dổi
